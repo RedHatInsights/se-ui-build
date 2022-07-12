@@ -1,4 +1,4 @@
-import { Action, Source } from "@openapi/generated";
+import { Action, ProcessorType, Source } from "@openapi/generated";
 export declare type Processor = SinkProcessor | SourceProcessor;
 export interface SinkProcessor extends BaseProcessor {
     type: "sink";
@@ -18,10 +18,11 @@ export interface EventFilter {
     key: string;
     type: string;
     value: string;
+    values?: (string | number)[];
 }
 export interface ProcessorFormData {
     name: string;
-    type: string;
+    type?: ProcessorType;
     action?: Action;
     transformationTemplate?: string;
     filters?: EventFilter[];
@@ -50,5 +51,21 @@ interface FieldValidateFunction {
 export interface FieldValidation {
     isValid: boolean;
     errorMessage: string;
+}
+export declare enum FilterType {
+    STRING_EQUALS = "StringEquals",
+    STRING_CONTAINS = "StringContains",
+    STRING_BEGINS = "StringBeginsWith",
+    STRING_IN = "StringIn",
+    NUMBER_IN = "NumberIn"
+}
+export declare enum ProcessorSchemaType {
+    ACTION = "action",
+    SOURCE = "source"
+}
+export interface DataShapeValue {
+    [key: string]: {
+        format: string;
+    };
 }
 export {};

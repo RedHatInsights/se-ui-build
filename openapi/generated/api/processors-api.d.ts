@@ -1,6 +1,6 @@
 /**
  * Red Hat Openshift SmartEvents Fleet Manager
- * The api exposed by the fleet manager of the SmartEvents service.
+ * The API exposed by the fleet manager of the SmartEvents service.
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: openbridge-dev@redhat.com
@@ -12,9 +12,11 @@
 import { AxiosPromise, AxiosInstance, AxiosRequestConfig } from 'axios';
 import { Configuration } from '../configuration';
 import { RequestArgs, BaseAPI } from '../base';
+import { ManagedResourceStatus } from '../model';
 import { ProcessorListResponse } from '../model';
 import { ProcessorRequest } from '../model';
 import { ProcessorResponse } from '../model';
+import { ProcessorType } from '../model';
 /**
  * ProcessorsApi - axios parameter creator
  * @export
@@ -51,12 +53,15 @@ export declare const ProcessorsApiAxiosParamCreator: (configuration?: Configurat
      * Get the list of Processors of a Bridge instance for the authenticated user.
      * @summary Get the list of Processors of a Bridge instance
      * @param {string} bridgeId
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
+     * @param {ProcessorType} [type]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listProcessors: (bridgeId: string, page?: number | undefined, size?: number | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    listProcessors: (bridgeId: string, name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, type?: ProcessorType | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
     /**
      * Update a Processor instance Filter definition or Transformation template for the authenticated user.
      * @summary Update a Processor instance Filter definition or Transformation template.
@@ -104,12 +109,15 @@ export declare const ProcessorsApiFp: (configuration?: Configuration | undefined
      * Get the list of Processors of a Bridge instance for the authenticated user.
      * @summary Get the list of Processors of a Bridge instance
      * @param {string} bridgeId
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
+     * @param {ProcessorType} [type]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listProcessors(bridgeId: string, page?: number | undefined, size?: number | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ProcessorListResponse>>;
+    listProcessors(bridgeId: string, name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, type?: ProcessorType | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<ProcessorListResponse>>;
     /**
      * Update a Processor instance Filter definition or Transformation template for the authenticated user.
      * @summary Update a Processor instance Filter definition or Transformation template.
@@ -157,12 +165,15 @@ export declare const ProcessorsApiFactory: (configuration?: Configuration | unde
      * Get the list of Processors of a Bridge instance for the authenticated user.
      * @summary Get the list of Processors of a Bridge instance
      * @param {string} bridgeId
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
+     * @param {ProcessorType} [type]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    listProcessors(bridgeId: string, page?: number | undefined, size?: number | undefined, options?: any): AxiosPromise<ProcessorListResponse>;
+    listProcessors(bridgeId: string, name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, type?: ProcessorType | undefined, options?: any): AxiosPromise<ProcessorListResponse>;
     /**
      * Update a Processor instance Filter definition or Transformation template for the authenticated user.
      * @summary Update a Processor instance Filter definition or Transformation template.
@@ -214,13 +225,16 @@ export interface ProcessorsApiInterface {
      * Get the list of Processors of a Bridge instance for the authenticated user.
      * @summary Get the list of Processors of a Bridge instance
      * @param {string} bridgeId
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
+     * @param {ProcessorType} [type]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProcessorsApiInterface
      */
-    listProcessors(bridgeId: string, page?: number, size?: number, options?: AxiosRequestConfig): AxiosPromise<ProcessorListResponse>;
+    listProcessors(bridgeId: string, name?: string, page?: number, size?: number, status?: Set<ManagedResourceStatus>, type?: ProcessorType, options?: AxiosRequestConfig): AxiosPromise<ProcessorListResponse>;
     /**
      * Update a Processor instance Filter definition or Transformation template for the authenticated user.
      * @summary Update a Processor instance Filter definition or Transformation template.
@@ -274,13 +288,16 @@ export declare class ProcessorsApi extends BaseAPI implements ProcessorsApiInter
      * Get the list of Processors of a Bridge instance for the authenticated user.
      * @summary Get the list of Processors of a Bridge instance
      * @param {string} bridgeId
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
+     * @param {ProcessorType} [type]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof ProcessorsApi
      */
-    listProcessors(bridgeId: string, page?: number, size?: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ProcessorListResponse, any>>;
+    listProcessors(bridgeId: string, name?: string, page?: number, size?: number, status?: Set<ManagedResourceStatus>, type?: ProcessorType, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<ProcessorListResponse, any>>;
     /**
      * Update a Processor instance Filter definition or Transformation template for the authenticated user.
      * @summary Update a Processor instance Filter definition or Transformation template.

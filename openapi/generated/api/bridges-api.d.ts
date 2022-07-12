@@ -1,6 +1,6 @@
 /**
  * Red Hat Openshift SmartEvents Fleet Manager
- * The api exposed by the fleet manager of the SmartEvents service.
+ * The API exposed by the fleet manager of the SmartEvents service.
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: openbridge-dev@redhat.com
@@ -15,6 +15,7 @@ import { RequestArgs, BaseAPI } from '../base';
 import { BridgeListResponse } from '../model';
 import { BridgeRequest } from '../model';
 import { BridgeResponse } from '../model';
+import { ManagedResourceStatus } from '../model';
 /**
  * BridgesApi - axios parameter creator
  * @export
@@ -47,12 +48,14 @@ export declare const BridgesApiAxiosParamCreator: (configuration?: Configuration
     /**
      * Get the list of Bridge instances for the authenticated user.
      * @summary Get the list of Bridge instances
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBridges: (page?: number | undefined, size?: number | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
+    getBridges: (name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, options?: AxiosRequestConfig) => Promise<RequestArgs>;
 };
 /**
  * BridgesApi - functional programming interface
@@ -86,12 +89,14 @@ export declare const BridgesApiFp: (configuration?: Configuration | undefined) =
     /**
      * Get the list of Bridge instances for the authenticated user.
      * @summary Get the list of Bridge instances
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBridges(page?: number | undefined, size?: number | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BridgeListResponse>>;
+    getBridges(name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, options?: AxiosRequestConfig<any> | undefined): Promise<(axios?: AxiosInstance | undefined, basePath?: string | undefined) => AxiosPromise<BridgeListResponse>>;
 };
 /**
  * BridgesApi - factory interface
@@ -125,12 +130,14 @@ export declare const BridgesApiFactory: (configuration?: Configuration | undefin
     /**
      * Get the list of Bridge instances for the authenticated user.
      * @summary Get the list of Bridge instances
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      */
-    getBridges(page?: number | undefined, size?: number | undefined, options?: any): AxiosPromise<BridgeListResponse>;
+    getBridges(name?: string | undefined, page?: number | undefined, size?: number | undefined, status?: Set<ManagedResourceStatus> | undefined, options?: any): AxiosPromise<BridgeListResponse>;
 };
 /**
  * BridgesApi - interface
@@ -168,13 +175,15 @@ export interface BridgesApiInterface {
     /**
      * Get the list of Bridge instances for the authenticated user.
      * @summary Get the list of Bridge instances
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BridgesApiInterface
      */
-    getBridges(page?: number, size?: number, options?: AxiosRequestConfig): AxiosPromise<BridgeListResponse>;
+    getBridges(name?: string, page?: number, size?: number, status?: Set<ManagedResourceStatus>, options?: AxiosRequestConfig): AxiosPromise<BridgeListResponse>;
 }
 /**
  * BridgesApi - object-oriented interface
@@ -213,11 +222,13 @@ export declare class BridgesApi extends BaseAPI implements BridgesApiInterface {
     /**
      * Get the list of Bridge instances for the authenticated user.
      * @summary Get the list of Bridge instances
+     * @param {string} [name]
      * @param {number} [page]
      * @param {number} [size]
+     * @param {Set<ManagedResourceStatus>} [status]
      * @param {*} [options] Override http request option.
      * @throws {RequiredError}
      * @memberof BridgesApi
      */
-    getBridges(page?: number, size?: number, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<BridgeListResponse, any>>;
+    getBridges(name?: string, page?: number, size?: number, status?: Set<ManagedResourceStatus>, options?: AxiosRequestConfig): Promise<import("axios").AxiosResponse<BridgeListResponse, any>>;
 }

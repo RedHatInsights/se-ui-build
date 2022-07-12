@@ -1,6 +1,6 @@
 /**
  * Red Hat Openshift SmartEvents Fleet Manager
- * The api exposed by the fleet manager of the SmartEvents service.
+ * The API exposed by the fleet manager of the SmartEvents service.
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: openbridge-dev@redhat.com
@@ -46,12 +46,6 @@ export interface ProcessorResponse {
     'href'?: string;
     /**
      *
-     * @type {ProcessorType}
-     * @memberof ProcessorResponse
-     */
-    'type'?: ProcessorType;
-    /**
-     *
      * @type {string}
      * @memberof ProcessorResponse
      */
@@ -68,6 +62,18 @@ export interface ProcessorResponse {
      * @memberof ProcessorResponse
      */
     'status'?: ManagedResourceStatus;
+    /**
+     *
+     * @type {string}
+     * @memberof ProcessorResponse
+     */
+    'owner'?: string;
+    /**
+     *
+     * @type {ProcessorType}
+     * @memberof ProcessorResponse
+     */
+    'type'?: ProcessorType;
     /**
      *
      * @type {Set<BaseFilter>}

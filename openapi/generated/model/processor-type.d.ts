@@ -1,6 +1,6 @@
 /**
  * Red Hat Openshift SmartEvents Fleet Manager
- * The api exposed by the fleet manager of the SmartEvents service.
+ * The API exposed by the fleet manager of the SmartEvents service.
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: openbridge-dev@redhat.com
@@ -17,5 +17,6 @@
 export declare const ProcessorType: {
     readonly Source: "source";
     readonly Sink: "sink";
+    readonly ErrorHandler: "error_handler";
 };
 export declare type ProcessorType = typeof ProcessorType[keyof typeof ProcessorType];

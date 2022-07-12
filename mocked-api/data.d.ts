@@ -20,10 +20,7 @@ export declare const processorData: ({
     status: string;
     action: {
         type: string;
-        parameters: {
-            channel: string;
-            webhookUrl: string;
-        };
+        parameters: string;
     };
     filters?: undefined;
     source?: undefined;
@@ -43,10 +40,7 @@ export declare const processorData: ({
     status: string;
     action: {
         type: string;
-        parameters: {
-            channel: string;
-            webhookUrl: string;
-        };
+        parameters: string;
     };
     transformationTemplate?: undefined;
     source?: undefined;
@@ -66,10 +60,7 @@ export declare const processorData: ({
     status: string;
     source: {
         type: string;
-        parameters: {
-            channel: string;
-            token: string;
-        };
+        parameters: string;
     };
     transformationTemplate?: undefined;
     action?: undefined;

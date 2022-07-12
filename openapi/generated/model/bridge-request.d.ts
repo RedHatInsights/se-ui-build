@@ -1,6 +1,6 @@
 /**
  * Red Hat Openshift SmartEvents Fleet Manager
- * The api exposed by the fleet manager of the SmartEvents service.
+ * The API exposed by the fleet manager of the SmartEvents service.
  *
  * The version of the OpenAPI document: 0.0.1
  * Contact: openbridge-dev@redhat.com
@@ -9,6 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import { Action } from './action';
 /**
  *
  * @export
@@ -21,4 +22,10 @@ export interface BridgeRequest {
      * @memberof BridgeRequest
      */
     'name': string;
+    /**
+     *
+     * @type {Action}
+     * @memberof BridgeRequest
+     */
+    'error_handler'?: Action;
 }
