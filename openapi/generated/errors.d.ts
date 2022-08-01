@@ -54,4 +54,8 @@ export declare const APIErrorCodes: {
     ERROR_30: string;
     /** Unable to deserialize Filter definition.*/
     ERROR_32: string;
+    /** The selected Cloud Provider is not valid.*/
+    ERROR_33: string;
+    /** The selected Region is not valid.*/
+    ERROR_34: string;
 };

@@ -20,13 +20,13 @@ export interface CloudProviderResponse {
      * @type {string}
      * @memberof CloudProviderResponse
      */
-    'kind'?: string;
+    'kind': string;
     /**
      *
      * @type {string}
      * @memberof CloudProviderResponse
      */
-    'id'?: string;
+    'id': string;
     /**
      *
      * @type {string}
@@ -38,17 +38,17 @@ export interface CloudProviderResponse {
      * @type {string}
      * @memberof CloudProviderResponse
      */
-    'href'?: string;
+    'href': string;
     /**
      *
      * @type {string}
      * @memberof CloudProviderResponse
      */
-    'display_name'?: string;
+    'display_name': string;
     /**
      *
      * @type {boolean}
      * @memberof CloudProviderResponse
      */
-    'enabled'?: boolean;
+    'enabled': boolean;
 }

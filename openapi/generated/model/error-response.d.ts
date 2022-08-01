@@ -20,13 +20,13 @@ export interface ErrorResponse {
      * @type {string}
      * @memberof ErrorResponse
      */
-    'kind'?: string;
+    'kind': string;
     /**
      *
      * @type {string}
      * @memberof ErrorResponse
      */
-    'id'?: string;
+    'id': string;
     /**
      *
      * @type {string}
@@ -38,17 +38,17 @@ export interface ErrorResponse {
      * @type {string}
      * @memberof ErrorResponse
      */
-    'href'?: string;
+    'href': string;
     /**
      *
      * @type {string}
      * @memberof ErrorResponse
      */
-    'code'?: string;
+    'code': string;
     /**
      *
      * @type {string}
      * @memberof ErrorResponse
      */
-    'reason'?: string;
+    'reason': string;
 }

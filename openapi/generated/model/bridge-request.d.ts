@@ -28,4 +28,16 @@ export interface BridgeRequest {
      * @memberof BridgeRequest
      */
     'error_handler'?: Action;
+    /**
+     *
+     * @type {string}
+     * @memberof BridgeRequest
+     */
+    'cloud_provider': string;
+    /**
+     *
+     * @type {string}
+     * @memberof BridgeRequest
+     */
+    'region': string;
 }

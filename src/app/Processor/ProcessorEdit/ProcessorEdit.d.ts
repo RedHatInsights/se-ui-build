@@ -15,6 +15,8 @@ export interface ProcessorEditProps {
     onCancel: () => void;
     /** Already existing processor name that prevents from saving the processor */
     existingProcessorName?: string;
+    /** Malformed transformation template error that prevents from saving the processor */
+    malformedTransformationTemplate?: string;
     /** Catalog of all the actions/sources */
     schemaCatalog: ProcessorSchemaEntryResponse[];
     /** Callback to retrieve a single action/source schema */

@@ -3,6 +3,7 @@ export declare const instancesData: {
     id: string;
     name: string;
     href: string;
+    owner: string;
     status: string;
     submitted_at: string;
     published_at: string;
